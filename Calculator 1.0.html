@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+
+var numList=[];
+
+function func1(){
+	document.getElementById('output').innerHTML=1;
+	numList.push(1);
+}
+
+function func2(){
+	document.getElementById('output').innerHTML=2;
+    numList.push(2);
+}
+
+function func3(){
+	document.getElementById('output').innerHTML=3;
+	numList.push(3);
+}
+
+function func4(){
+	document.getElementById('output').innerHTML=4;
+	numList.push(4);
+}
+
+function func5(){
+	document.getElementById('output').innerHTML=5;
+	numList.push(5);
+}
+
+function func6(){
+	document.getElementById('output').innerHTML=6;
+	numList.push(6);
+}
+
+function func7(){
+	document.getElementById('output').innerHTML=7;
+	numList.push(7);
+}
+
+function func8(){
+	document.getElementById('output').innerHTML=8;
+	numList.push(8);
+}
+
+function func9(){
+	document.getElementById('output').innerHTML=9;
+	numList.push(9);
+}
+
+function funcSum(){
+	document.getElementById('output').innerHTML= 'Addition';
+	numList.push(00);
+}
+
+function funcSub(){
+	document.getElementById('output').innerHTML='Subtraction';
+	numList.push(01);
+}
+
+function funcMul(){
+	document.getElementById('output').innerHTML='Multiplication';
+	numList.push(10);
+}
+
+function funcDivide(){
+	document.getElementById('output').innerHTML='Division';
+	numList.push(11);
+}
+
+function funcEqual(){
+	var x=numList.pop();
+    var y=numList.pop();
+    var z=numList.pop();
+    
+    if (y==00){
+		numList.push(x+z);
+    }
+    
+    else if (y==01){
+    	numList.push(z-x);
+    }
+    
+    else if (y==10){
+    	numList.push(z*x);
+    }
+    
+    else if (y==11){
+    	numList.push(z/x);
+    }
+    document.getElementById('output').innerHTML='Result is: ' +numList;
+    numList.pop();
+}
+
+</script>
+
+
+<style>
+	.button1{
+    	padding: 10px 10px 10px 10px;
+        margin: 4px 4px 4px 4px;
+        length: 30px;
+        width: 40px;
+        border-radius: 40%;
+    }
+    
+    .button2{
+    	padding: 10px 20px 10px 20px;
+        margin: 4px 4px 4px 15px;
+        width: 92px;
+        border-radius:10%;
+    }
+    
+    .button31{
+    	padding: 10px 10px 10px 10px;
+        margin: 4px 4px 4px 15px;
+        length: 30px;
+        width: 40px;
+        border-radius:10%;
+    }
+    .button32{
+    	padding: 10px 10px 10px 10px;
+        margin: 4px 4px 4px 4px;
+        length: 30px;
+        width: 40px;
+        border-radius:10%;
+    }
+</style>
+
+</head>
+
+<body>
+<br><br>
+<div>
+	<span> <button class='button1' id='b1' onclick='func1()'>1</button></span>
+    <span> <button class='button1'id='b2' onclick='func2()'>2</button></span>
+    <span> <button class='button1' id='b3' onclick='func3()'>3</button></span>
+    <span> <button class='button2' id='Calc' onclick='funcEqual()'>=</button></span>
+</div>
+<div>
+	<span> <button class='button1' id='b4' onclick='func4()'>4</button></span>
+    <span> <button class='button1' id='b5' onclick='func5()'>5</button></span>
+    <span> <button class='button1' id='b6' onclick='func6()'>6</button></span>
+    <span> <button class='button31' id='sum' onclick='funcSum()'>+</button></span>
+    <span> <button class='button32' id='sub' onclick='funcSub()'>-</button></span>
+</div>
+<div>
+	<span> <button class='button1' id='b7' onclick='func7()'>7</button></span>
+    <span> <button class='button1' id='b8' onclick='func8()'>8</button></span>
+    <span> <button class='button1' id='b9' onclick='func9()'>9</button></span>
+    <span> <button class='button31' id='mul' onclick='funcMul()'>*</button></span>
+    <span> <button class='button32' id='divide' onclick='funcDivide()'>/</button></span>
+</div>
+<br><br>
+<h3 id = "output"></h3>
+<br>
+
+
+<p id="demo"></p>
+
+</body>
+</html> 
