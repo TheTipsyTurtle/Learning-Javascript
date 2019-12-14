@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+
+
+var Y=0,K=0,L;
+function numberCheck(X){
+    Y=Y*10+X;
+    document.getElementById('output').innerHTML=Y;
+}
+
+function operandCheck(Z){
+	if(K!=0){
+    	result();
+        Y=F;
+    }
+	K=Y;
+    Y=0;
+    L=Z;    
+}
+
+function result(){
+    if (L=='a'){
+    	F=K+Y;
+    }
+    
+    else if (L=='s'){
+    	F=K-Y;
+    }
+    
+    else if (L=='m'){
+    	F=K*Y;
+    }
+    
+    else if (L=='d'){
+    	F=K/Y;
+    }
+    document.getElementById('output').innerHTML=F;
+    K=0;
+    Y=0;
+	
+}
+</script>
+
+
+<style>
+	.button1{
+    	padding: 10px 10px 10px 10px;
+        margin: 4px 4px 4px 4px;
+        length: 30px;
+        width: 40px;
+        border-radius: 40%;
+    }
+    
+    .button2{
+    	padding: 10px 20px 10px 20px;
+        margin: 4px 4px 4px 15px;
+        width: 92px;
+        border-radius:10%;
+    }
+    
+    .button31{
+    	padding: 10px 10px 10px 10px;
+        margin: 4px 4px 4px 15px;
+        length: 30px;
+        width: 40px;
+        border-radius:10%;
+    }
+    .button32{
+    	padding: 10px 10px 10px 10px;
+        margin: 4px 4px 4px 4px;
+        length: 30px;
+        width: 40px;
+        border-radius:10%;
+    }
+</style>
+
+</head>
+
+<body>
+<br><br>
+<div>
+	<span> <button class='button1' onclick='numberCheck(1)'>1</button></span>
+    
+    <span> <button class='button1' onclick='numberCheck(2)'>2</button></span>
+    
+    <span> <button class='button1' onclick='numberCheck(3)'>3</button></span>
+    <span> <button class='button31' onclick="numberCheck(0)">0</button></span>
+    
+    <span> <button class='button32' onclick="result()">=</button></span>
+    
+
+</div>
+
+
+<div>
+	<span> <button class='button1' onclick='numberCheck(4)'>4</button></span>
+    
+    <span> <button class='button1' onclick='numberCheck(5)'>5</button></span>
+    
+    <span> <button class='button1' onclick='numberCheck(6)'>6</button></span>
+    
+    <span> <button class='button31' onclick='operandCheck("a")'>+</button></span>
+    <span> <button class='button32' onclick='operandCheck("s")'>-</button></span>
+</div>
+<div>
+	<span> <button class='button1' onclick='numberCheck(7)'>7</button></span>
+    <span> <button class='button1' onclick='numberCheck(8)'>8</button></span>
+    <span> <button class='button1' onclick='numberCheck(9)'>9</button></span>
+    <span> <button class='button31' onclick='operandCheck("m")'>*</button></span>
+    <span> <button class='button32' onclick='operandCheck("d")'>/</button></span>
+</div>
+
+
+
+<br><br>
+<h3 id = "output"></h3>
+<br>
+
+
+</body>
+</html> 
